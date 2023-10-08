@@ -1,0 +1,10 @@
+VIRTUALBOX:
+  VM: 
+    NIC:
+      NAT:
+        ID: 1
+      HOSTONLY:
+        ID: 2
+    FORMATS:
+      NAME: Test.{vm_id:d}.VMBitrix{bitrix_vm_version}
+      UUID: 2c9b1cbd-c214-489e-{vm_id:04x}-36ee992a66e2
