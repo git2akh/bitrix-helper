@@ -6,7 +6,7 @@ for load initial script from repo and run it
 
 ### Ubuntu
 ```
-curl https://github.com/git2akh/bitrix-helper/blob/loader/ubuntu.sh | sh
+curl https://github.com/git2akh/bitrix-helper/blob/loader/bin/ubuntu.sh | sh
 ```
 
 ## 1. Directories
