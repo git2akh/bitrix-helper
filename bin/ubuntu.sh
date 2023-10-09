@@ -11,9 +11,12 @@ GIT_REPO_LATEST_DATA="$(curl -L --max-redirs 10 ${GIT_REPO_API_BASE}/releases/la
 GIT_REPO_LATEST_TAG="$(echo "${GIT_REPO_LATEST_DATA}" | sed -nE 's;^[[:space:]]{2}"tag_name"[[:space:]]*:[[:space:]]*"([^"]+)"[[:space:],]{0,1}$;\1;p;')";
 #GIT_LATEST_zipball_url="$(echo "${GIT_REPO_LATEST_DATA}" | sed -nE 's;^[[:space:]]{2}"tarball_url"[[:space:]]*:[[:space:]]*"([^"]+)"[[:space:],]{0,1}$;"\1";p;')";
 GIT_LATEST_tarball_url="$(echo "${GIT_REPO_LATEST_DATA}" | sed -nE 's;^[[:space:]]{2}"tarball_url"[[:space:]]*:[[:space:]]*"([^"]+)"[[:space:],]{0,1}$;"\1";p;')";
+
 #GIT_LATEST_FETCH_zipball_CMD="curl -L --max-redirs 10 ${GIT_LATEST_zipball_url} | tee \"${GIT_AUTHOR}-${GIT_REPO}-${GIT_REPO_LATEST_TAG}.tar.gz\" | wc -c";
-GIT_LATEST_FETCH_tarball_FILE="${GIT_AUTHOR}-${GIT_REPO}-${GIT_REPO_LATEST_TAG}.tar.gz";
-GIT_LATEST_FETCH_tarball_CMD="(curl -L --max-redirs 10 ${GIT_LATEST_tarball_url} | tee \"${GIT_LATEST_FETCH_tarball_FILE}\" | wc -c) && tar -xvzf "${GIT_LATEST_FETCH_tarball_FILE}"";
+
+#GIT_LATEST_FETCH_tarball_FILE="${GIT_AUTHOR}-${GIT_REPO}-${GIT_REPO_LATEST_TAG}.tar.gz";
+#GIT_LATEST_FETCH_tarball_CMD="(curl -L --max-redirs 10 ${GIT_LATEST_tarball_url} | tee \"${GIT_LATEST_FETCH_tarball_FILE}\" | wc -c) && tar -xvzf \"${GIT_LATEST_FETCH_tarball_FILE}\"";
+GIT_LATEST_FETCH_tarball_CMD="curl -L --max-redirs 10 ${GIT_LATEST_tarball_url} | tar -xvz";
 
 #GIT_BRANCH="$(echo "${GIT_REPO_LATEST_TAG}" | sed -nE 's;^(.+)$;--branch=\1 --single-branch;p;')";
 #GIT_BRANCH_FLAG_SB="$([ -z "${GIT_BRANCH}" ] || echo "--single-branch")";
