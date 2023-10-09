@@ -15,7 +15,7 @@ echo "starting @send2akh/bitrix-helper Ubuntu Installer by NimbleFridge ...";
 [ -d "${FETCH_DIR}" ] || mkdir "${FETCH_DIR}";
 cd "${FETCH_DIR}";
 echo "${GIT_ORIGIN}";
-echo git clone "${GIT_ORIGIN}" ${GIT_BRANCH};
+git clone "${GIT_ORIGIN}" ${GIT_BRANCH};
 cd "${GIT_REPO}";
 pwd;
 
