@@ -29,9 +29,9 @@ echo "${GIT_ORIGIN}";
 echo "${GIT_CLONE_CMD}";
 echo "${GIT_LATEST_FETCH_zipball_CMD}";
 echo "${GIT_LATEST_FETCH_tarball_CMD}";
-$GIT_CLONE_CMD;
-$GIT_LATEST_FETCH_zipball_CMD;
-$GIT_LATEST_FETCH_tarball_CMD;
+eval $GIT_CLONE_CMD;
+eval $GIT_LATEST_FETCH_zipball_CMD;
+eval $GIT_LATEST_FETCH_tarball_CMD;
 cd "${GIT_REPO}";
 pwd;
 
