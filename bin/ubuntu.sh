@@ -5,6 +5,7 @@ GIT_HOST=github.com
 GIT_AUTHOR="git2akh";
 GIT_REPO="bitrix-helper";
 GIT_ORIGIN="${GIT_SCHEME}://${GIT_HOST}/${GIT_AUTHOR}/${GIT_REPO}.git";
+GIT_ORIGIN="$(curl https://api.github.com/repos/git2akh/bitrix-helper/releases/latest | sed -nE 's;^[[:space:]]{2}"html_url"[[:space:]]*:[[:space:]]*("[^"]+")[[:space:],]{0,1}$;\1;p;')";
 FETCH_DIR=".core";
 
 echo "starting @send2akh/bitrix-helper Ubuntu Installer by NimbleFridge ...";
